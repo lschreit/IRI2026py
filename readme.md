@@ -4,9 +4,9 @@ This package provides Python bindings for the IRI2026 ionospheric model, built f
 
 ## Source and data files
 
-The package no longer keeps IRI Fortran sources (`*.for`) and runtime data (`ccir*.asc`, `ursi*.asc`, `mcsat*.dat`, `dgrf*.dat`, `igrf*.dat`, `apf107.dat`, `ig_rz.dat`, etc.) in the git repository.
+The package does not keeps IRI Fortran sources (`*.for`) and runtime data (`ccir*.asc`, `ursi*.asc`, `mcsat*.dat`, `dgrf*.dat`, `igrf*.dat`, `apf107.dat`, `ig_rz.dat`, etc.) in the git repository.
 
-During `pip install .`, the build downloads the required files from `https://irimodel.org/IRI-2026/`, compiles the extension with the downloaded Fortran files, and installs the runtime data into the package.
+During `pip install .`, the build downloads the required files from `https://irimodel.org/IRI-2026/`, compiles the extension with the downloaded Fortran files, and installs the runtime data into the package. IRI license is to be respected.
 
 ## Build and Install
 
