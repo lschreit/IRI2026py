@@ -1,0 +1,11 @@
+# Local build artifacts
+builddir/
+**/.so
+**/*.pyc
+__pycache__/
+
+# IRI sources/runtime data: downloaded during build/install, not stored in git
+src/iri2026/*.asc
+src/iri2026/*.dat
+src/iri2026/*.for
+src/iri2026/*.zip

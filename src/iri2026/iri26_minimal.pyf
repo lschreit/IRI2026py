@@ -1,0 +1,72 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module iri2026
+    interface
+        subroutine iri_sub(jf, jmag, alati, along, iyyyy, mmdd, dhour, heibeg, heiend, heistp, outf, oarr)
+            logical dimension(50), intent(in) :: jf
+            integer, intent(in) :: jmag
+            real, intent(in) :: alati
+            real, intent(in) :: along
+            integer, intent(in) :: iyyyy
+            integer, intent(in) :: mmdd
+            real, intent(in) :: dhour
+            real, intent(in) :: heibeg
+            real, intent(in) :: heiend
+            real, intent(in) :: heistp
+            real dimension(20,1000), intent(inout) :: outf
+            real dimension(100), intent(inout) :: oarr
+        end subroutine iri_sub
+        
+        subroutine iritec(alati, along, jmag, jf, iy, md, hour, hbeg, hend, hstep, oarr, tecbo, tecto)
+            real :: alati
+            real :: along
+            integer :: jmag
+            logical dimension(50) :: jf
+            integer :: iy
+            integer :: md
+            real :: hour
+            real :: hbeg
+            real :: hend
+            real :: hstep
+            real dimension(100) :: oarr
+            real :: tecbo
+            real :: tecto
+        end subroutine iritec
+
+        subroutine geocgm01(icor, iyear, hi, dat, pla, plo)
+            integer :: icor
+            integer :: iyear
+            real :: hi
+            real dimension(11,4) :: dat
+            real dimension(4) :: pla
+            real dimension(4) :: plo
+        end subroutine geocgm01
+
+        subroutine igrf_dip(xlat, xlong, year, height, dec, dip, dipl, ymodip)
+            real :: xlat
+            real :: xlong
+            real :: year
+            real :: height
+            real :: dec
+            real :: dip
+            real :: dipl
+            real :: ymodip
+        end subroutine igrf_dip
+        
+        subroutine readapf107 ! in :iri20:irifun.for
+            integer dimension(27000,9) :: aap
+            real dimension(27000,3) :: af107
+            integer :: n
+            common /apfa/ aap,af107,n
+        end subroutine readapf107
+        
+        subroutine read_ig_rz ! in :iri20:irifun.for
+            real dimension(1600) :: aig
+            real dimension(1600) :: arz
+            integer :: iymst
+            integer :: iymend
+            common /igrz/ aig,arz,iymst,iymend
+        end subroutine read_ig_rz
+    end interface
+end python module iri2026
